@@ -57,6 +57,19 @@ body {
 .players>div {
     width: 50%;
     font-size: 20px;
+    padding: 2px 10px;
+    border-radius: 4px;
+    transition: .4s;
+}
+
+.players>div.active {
+    color: #ededed;
+    background-color: #99c;
+    transition: .4s;
+}
+
+.players>div.active span {
+    color: #fff;
 }
 
 .players span {

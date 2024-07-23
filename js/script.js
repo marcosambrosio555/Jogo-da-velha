@@ -8,6 +8,7 @@ let turn = true
 let click = 0
 let OnePoints = 0
 let TwoPoints = 0
+colorTurn()
 
 for (let i = 0; i < 9; i++) {
     board.innerHTML += `<input type='button' onclick='mark(this)' class='box' value='${i}'>`
@@ -25,6 +26,7 @@ function mark(button) {
         button.value = 'O'
     }
 
+    colorTurn()
     turn = !turn
     button.style.color = "#eee"
     click++
@@ -68,10 +70,17 @@ function verification(a, b, c) {
     }
 }
 
+function colorTurn() {
+
+    playerOne.classList.toggle("active")
+    playerTwo.classList.toggle("active")
+
+}
+
 
 function result(POP, PTP) {
-    playerOne.innerHTML = `Player 1 : <span>${OnePoints += POP}</span>`
-    playerTwo.innerHTML = `Player 2 : <span>${TwoPoints += PTP}</span>`
+    playerOne.innerHTML = `Jogador X : <span>${OnePoints += POP}</span>`
+    playerTwo.innerHTML = `Jogador O : <span>${TwoPoints += PTP}</span>`
 }
 
 result(0, 0)
